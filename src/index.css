@@ -1,0 +1,199 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(1, 22, 24);
+  color: white;
+  overflow: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.card {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  opacity: 100%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 50px rgba(28, 3, 255, 0.989);
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-title {
+  color: navy;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.search-bar input[type="text"] {
+  border-radius: 50px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 100%;
+  padding-right: 40px;
+}
+
+.search-bar button {
+  background-color: rgb(35, 185, 236);
+  border: none;
+  padding: 10px;
+  margin-left: -40px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-bar button:hover {
+  background-color: darkblue;
+  color: white;
+}
+
+.result {
+  margin-top: 20px;
+}
+
+.result h1 {
+  font-size: 24px;
+  color: navy;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 20px;
+    width: 90%;
+  }
+
+  .search-bar input[type="text"] {
+    font-size: 16px;
+  }
+
+  .search-bar button {
+    padding: 8px;
+  }
+
+  .result h1 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 15px;
+    width: 100%;
+  }
+
+  .search-bar input[type="text"] {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .search-bar button {
+    padding: 6px;
+  }
+
+  .result h1 {
+    font-size: 18px;
+  }
+}
+
+/* Background Animation */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.sun, .moon, .cloud, .star {
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.sun {
+  width: 100px;
+  height: 100px;
+  background-image: url('https://img.icons8.com/color/100/000000/sun--v1.png');
+  animation: moveSun 20s linear infinite;
+}
+
+.moon {
+  width: 80px;
+  height: 80px;
+  background-image: url('https://img.icons8.com/color/80/000000/full-moon.png');
+  animation: moveMoon 30s linear infinite;
+}
+
+.cloud {
+  width: 150px;
+  height: 100px;
+  background-image: url('https://img.icons8.com/ios-filled/100/000000/cloud.png');
+  animation: moveCloud 25s linear infinite;
+}
+
+.star {
+  width: 30px;
+  height: 30px;
+  background-image: url('https://img.icons8.com/ios-filled/50/000000/star.png');
+  animation: twinkle 5s ease-in-out infinite alternate;
+}
+
+@keyframes moveSun {
+  0% { top: 10%; left: 10%; }
+  50% { top: 30%; left: 60%; }
+  100% { top: 10%; left: 10%; }
+}
+
+@keyframes moveMoon {
+  0% { top: 70%; left: 70%; }
+  50% { top: 50%; left: 20%; }
+  100% { top: 70%; left: 70%; }
+}
+
+@keyframes moveCloud {
+  0% { top: 20%; left: -150px; }
+  100% { top: 20%; left: 100%; }
+}
+
+@keyframes twinkle {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
